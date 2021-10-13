@@ -1,0 +1,55 @@
+﻿@page
+@model KooliProjekt.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to Book library</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Book[0].BookTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Book[0].Publisher)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Book[0].BookAuthors)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Book[0].Comments)
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.Book)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Publisher!.PublisherName)
+                </td>
+                <td>
+                    Authors: @item.BookAuthors!.Count<br/>
+                    <ul>
+                        @foreach (var bookAuthor in item.BookAuthors)
+                        {
+                            <li>@bookAuthor.Author!.FirstLastName</li>
+                        }
+                    </ul>
+                </td>
+                <td>
+                    Comment count: @item.Comments!.Count<br/>
+                    Last comment: @(item.Comments.LastOrDefault()?.CommentText ?? "no comments yet")
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
