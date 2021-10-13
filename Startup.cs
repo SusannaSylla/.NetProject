@@ -83,8 +83,8 @@ namespace KooliProjekt
             var authors = new[]
             {
                 new Author() { AuthorId = 1, FirstName = "Mihkel", LastName = "Männik", YearOfBirth = 1699 },
-                new Author() { AuthorId = 2, FirstName = "Nipi", LastName = "Tiri", YearOfBirth = 8008 },
-                new Author() { AuthorId = 3, FirstName = "Mihkel", LastName = "Männik", YearOfBirth = 1990 },
+                new Author() { AuthorId = 2, FirstName = "Andres", LastName = "Ehin", YearOfBirth = 2008 },
+                new Author() { AuthorId = 3, FirstName = "Peep", LastName = "Ehasalu", YearOfBirth = 1990 },
                 new Author() { AuthorId = 4, FirstName = "Leelo", LastName = "Tungal", YearOfBirth = 1956 },
             };
             foreach (var author in authors)
